@@ -1,0 +1,123 @@
+Status,Section,Priority for implementation,Function type,Address,RS485 slave,RS485 master,Reserved,ID,Name,Description,"Size
+Float (32bit), 
+16/32bit signed int",Measure unit,Div,Default,Min,Max,Factory set,Working set
+,General,,RI,1,x,,,SOFTWARE_ID,Software ID,SW version Major,16bit,-,-,0,0,0x7fff,,
+,General,,RI,2,x,,,SOFTWARE_VERSION,Software Version,"SW version. Upper byte major, lower byte minor.",16bit,-,-,0,0,0x7fff,,
+,General,,RI,3,x,,,SOFTWARE_REVISION,Software Revision,"SW revision. 
+Updates in firmware",16bit,-,-,0,0,0x7fff,,
+,General,,RI,4,x,,,PRODUCT_SERIAL_NUMBER,Product Serial Number,Serial number for current production batch,16bit,-,-,1,0,0x7fff,,
+,General,,RI,5,x,,,PARAMETER_VERSION,Parameter version,Version of this file used. Should also be used for version of this document. ,16bit,-,-,9,0,0x7fff,,
+,General,,RI,6,x,,,PCB_VERSION,PCB Version,PCB Version Number,16bit,-,-,22,0,0x7fff,,
+,General,,RI,7,x,,,UNIT_STATUS,Unit Status,"Unit states (bitwise):
+E_UNIT_STATUS_NORMAL=1<<0,
+E_UNIT_CALIBRATION=1<<1,
+E_UNIT_AQUIRE_NO_FLOW_REF=1<<2,
+E_UNIT_POUR=1<<3,
+E_UNIT_STATUS_ERROR=1<<13,
+",16bit,-,-,0,0,3,,
+,General,,RI,8,x,,,UP_TIME,Up Time,The units up-time in minutes since last power-on.,32bit,s,-,0,,,,
+,System,,RI,10,x,,,PROCESSING_TIME,Processing time,The total processing time in ms the complete task sequence. ,16bit,-,-,0,0,0x7fff,,
+,System,,RI,11,x,,,SAMP_FREQ,Sampling frequency,The sample frequency ,16bit,Hz,-,100,0,0x7fff,,
+,System,,RI,12,x,,,MCU_ID_1,MCU ID 1,The unique MCU ID ,32bit,-,-,0,0,0xffffffff,,
+,System,,RI,14,x,,,MCU_ID_2,MCU ID 2,The unique MCU ID ,32bit,-,-,0,0,0xffffffff,,
+,System,,RI,16,x,,,MCU_ID_3,MCU ID 3,The unique MCU ID ,32bit,-,-,0,0,0xffffffff,,
+,System,,RI,18,x,,,UNIT_ALARMS,Unit alarms,"Alarm ID:
+No alarm=0",32bit,-,-,0,0,0xffffffff,,
+,Sensor,,RI,20,x,,,RTD_S1,RTD Sensor 1,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,21,x,,,RTD_S2,RTD Sensor 2,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,22,x,,,RTD_S3,RTD Sensor 3,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,23,x,,,RTD_S4,RTD Sensor 4,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,24,x,,,RTD_S5,RTD Sensor 5,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,25,x,,,RTD_S6,RTD Sensor 6,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,26,x,,,RTD_S7,RTD Sensor 7,Raw data in degrees,16bit,-,100,0,0,0x7fff,,
+,Sensor,,RI,27,x,,,RAW_S1,Raw data sensor 1,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,28,x,,,RAW_S2,Raw data sensor 2,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,29,x,,,RAW_S3,Raw data sensor 3,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,30,x,,,RAW_S4,Raw data sensor 4,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,31,x,,,RAW_S5,Raw data sensor 5,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,32,x,,,RAW_S6,Raw data sensor 6,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,33,x,,,RAW_S7,Raw data sensor 7,Raw data in bits,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RI,34,x,,,VOLTAGE_S1,Voltage data sensor 1,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,36,x,,,VOLTAGE_S2,Voltage data sensor 2,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,38,x,,,VOLTAGE_S3,Voltage data sensor 3,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,40,x,,,VOLTAGE_S4,Voltage data sensor 4,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,42,x,,,VOLTAGE_S5,Voltage data sensor 5,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,44,x,,,VOLTAGE_S6,Voltage data sensor 6,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,46,x,,,VOLTAGE_S7,Voltage data sensor 7,Data converted to voltage,Float,V,-,0,0,0xffffffff,,
+,Sensor,,RI,48,x,,,FLOW_S1,Processed data sensor 1,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,50,x,,,FLOW_S2,Processed data sensor 2,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,52,x,,,FLOW_S3,Processed data sensor 3,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,54,x,,,FLOW_S4,Processed data sensor 4,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,56,x,,,FLOW_S5,Processed data sensor 5,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,58,x,,,FLOW_S6,Processed data sensor 6,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,60,x,,,FLOW_S7,Processed data sensor 7,Processed data,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,62,x,,,TOTAL_MEAS_S1,Total measured sensor 1,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,64,x,,,TOTAL_MEAS_S2,Total measured sensor 2,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,66,x,,,TOTAL_MEAS_S3,Total measured sensor 3,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,68,x,,,TOTAL_MEAS_S4,Total measured sensor 4,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,70,x,,,TOTAL_MEAS_S5,Total measured sensor 5,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,72,x,,,TOTAL_MEAS_S6,Total measured sensor 6,Total measured,Float,,-,0,0,0xffffffff,,
+,Sensor,,RI,74,x,,,TOTAL_MEAS_S7,Total measured sensor 7,Total measured,Float,,-,0,0,0xffffffff,,
+,System,,RI,76,x,,,DAC_VALUE,DAC value,The current DAC value. Good to know when calibrateing.,u16bit,-,-,0,0,0xffff,,
+,System,,RI,77,,,,TTL_OUTPUT,TTL output,Current frequency,16bit,Hz,-,0,0,0xffff,,
+,General,,RH,1,x,,,S_COMM_ID,Modbus ID,MAC ID,16bit,-,-,1,0,255,,
+,General,,RH,2,x,,,DEBUG_LEVEL,Debug level,"Debug level:
+0= No debug
+1= General info
+2 = Full debug",16bit,-,-,0,0,3,,
+,Sensor,,RH,3,x,,,CALIBRATE_SENSORS,Calibrate sensor,"Calibrate sensor:
+0= Stop calibration (PWM off)
+1= Run calibration (PWM off)
+2= Calibrated (PWM om)
+
+Unit status indicate progress",16bit,-,-,0,0,3,,
+,System,,RH,4,x,,,BRG_POWER_EN,"Bridge power enable.
+
+Sets the sensors that is active and should be calibrated and used in the system.","2^0 All off
+2^1 Sensor 1
+…
+2^8 Sensor 7",u16bit,-,-,255,0,0xffff,,
+,System,,RH,5,x,,,GPIO_CONTROL,GPIO on/off,"2^0 All off
+2^1 GPIO 1
+…
+2^8 GPIO 7",16bit,-,-,0,0,0xffff,,
+,Sensor,,RH,6,x,,,CALIBRATION_S1,Sensor 1 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,7,x,,,CALIBRATION_S2,Sensor 2 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,8,x,,,CALIBRATION_S3,Sensor 3 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,9,x,,,CALIBRATION_S4,Sensor 4 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,10,x,,,CALIBRATION_S5,Sensor 5 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,11,x,,,CALIBRATION_S6,Sensor 6 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,12,x,,,CALIBRATION_S7,Sensor 7 calibration,Stored calibration offset. ,u16bit,-,-,0xffff,0,0xffff,,
+,Sensor,,RH,13,x,,,RAMP_START_VAL,DAC start value,Sets the start value for the DAC,u16bit,-,-,0,0,0xffff,,
+,Sensor,,RH,14,x,,,TARGET_VOLTAGE,Target voltage,Calibration target voltage,16bit,-,10,100,0,0xffffffff,,
+,Sensor calibration,,RH,15,x,,,SENS_COFF_A_S1,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,17,x,,,SENS_COFF_A_S2,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,19,x,,,SENS_COFF_A_S3,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,21,x,,,SENS_COFF_A_S4,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,23,x,,,SENS_COFF_A_S5,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,25,x,,,SENS_COFF_A_S6,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,27,x,,,SENS_COFF_A_S7,Sensor coefficient A,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,29,x,,,SENS_COFF_B_S1,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,31,x,,,SENS_COFF_B_S2,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,33,x,,,SENS_COFF_B_S3,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,35,x,,,SENS_COFF_B_S4,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,37,x,,,SENS_COFF_B_S5,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,39,x,,,SENS_COFF_B_S6,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Sensor calibration,,RH,41,x,,,SENS_COFF_B_S7,Sensor coefficient B,Part of flow calculation,Float,-,-,1,0,0xffffffff,,
+,Pour,,RH,43,x,,,POUR_CONTROL,Controls pour,"0=Off
+1=Start pour function
+2=Aquire new “no flow reference”
+3=Pour done",u16bit,-,-,0,0,2,,
+,Pour,,RH,44,x,,,POUR_VALUE_S1,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,46,x,,,POUR_VALUE_S2,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,48,x,,,POUR_VALUE_S3,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,50,x,,,POUR_VALUE_S4,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,52,x,,,POUR_VALUE_S5,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,54,x,,,POUR_VALUE_S6,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,Pour,,RH,56,x,,,POUR_VALUE_S7,Pour value ,If zero no pour possible. Fixed point – one decimal,Float,-,0,0,0,0xffffffff,,
+,System,,RH,58,x,,,TTL_SCALE,TTL output factor,Factor to divide TTL output frequency,Float,-,0,1,0,0xffffffff,,
+,System,,RH,60,x,,,TMR_ZERO_REF,Timer zero reference,Average timer to aquire no flow reference,u32bit,ms,-,3000,0,0xffffffff,,
+,System,,RH,62,x,,,WRITE_FLASH,Write to flash,"This command will write to flash memory. 
+0=No action / write done
+1=Write to flash
+",16bit,,,0,0,1,,

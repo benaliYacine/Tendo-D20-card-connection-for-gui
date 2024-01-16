@@ -1,0 +1,28 @@
+Subject: Troubleshooting Installation and GUI Issues
+
+Dear [Client's Name],
+
+Thank you for reaching out and providing detailed information about the issues you encountered while installing the required packages and running the GUI. Based on the error messages you shared, it appears that the problems are due to the following reasons:
+
+Python 3.7: The package for Python 3.7 is not available in the repositories that your package manager is currently using. To resolve this issue, you can add the "deadsnakes" PPA repository, which maintains different versions of Python. Please follow these steps to add the repository and install Python 3.7:
+Update your package list: sudo apt update
+Install necessary packages for adding a new PPA repository: sudo apt install software-properties-common
+Add the deadsnakes PPA: sudo add-apt-repository ppa:deadsnakes/ppa
+Update your package list again to include the new repository: sudo apt update
+Try installing Python 3.7 again: sudo apt install python3.7
+You can verify the installation by running: python --version
+
+PyQt5 5.11.3: The version 5.11.3 of PyQt5 is not compatible with your current Python version. Since PyQt5 5.11.3 is compatible with Python 2.7, 3.4, 3.5, 3.6, and 3.7, solving the first issue should resolve this one as well. You should be able to install PyQt5 5.11.3 after installing Python 3.7.
+Regarding the GUI running problem, there seems to be an error in the "comUpdate" function. because I do not have the USB device you are using, so I was unable to test it. However, I have made the necessary corrections to the code. It is important to note that if you use the corrected code with the latest package versions,
+ you may encounter additional errors. As a result, I recommend uninstalling the current library versions and then installing the specific versions mentioned earlier for the script: "Python 3.7.7 MinimalModbus 2.0.1 PyQt5 5.11.3 PyQtGraph 0.10.0 NumPy 1.21.6". This approach is easier than updating the code to work with the latest package versions.
+Nonetheless, If you continue to experience issues after following these steps, please let me know, and I will update the code to work with the latest package versions. Your satisfaction is my priority, and I am committed to helping you resolve these issues as quickly as possible.
+
+Best regards,
+
+[Your Name]
+
+
+
+
+
+

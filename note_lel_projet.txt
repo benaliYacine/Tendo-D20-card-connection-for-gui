@@ -1,0 +1,45 @@
+ki yekliki 3la start reg POUR_CONTROL yweli =1 mais maye9derch y3awed yrodo =0 est ce que howa hab haka wela hab ki t3awed 
+tekliki y3awed yweli =0 (0=Off 1=Start pour function)
+
+hkayet les registre ta3 tabs ki yech3al (display the initial values when the screen first loads) ye9ra les valeurs men les reg w yaffichi 
+(tema normalment capture device hiya li thot hadouk initial values fel les reg w ana naffichihom bark ) 
+
+
+ desien aw dark them w simple tema 9ader nbedelo les icons ...
+
+seyitou b version khdokhra fiha rand fi blaset modbus bah ntestih 
+
+the gui is build based on your description but there some points I don't realy now if that what you what want ,so I will exolane to you this points and if you was meening another thing tel me to change them,
+      lets start whith the first page :
+
+	the setting of the amount of pour with a bre defined values let say the first line,each time you press its button the the value will change to the next value (the values are: 0, 0.75, 1,
+1.5, 2, or 3) , the next point is about the start button , when the gui first loads iy do not change the default value of the POUR_CONTROL register and whene 
+you press the button SETS POUR_CONTROL TO 1 as your description but you can't change the value to 0 ,2 or 3 enless you go to settings page,
+
+	now lets go to the settings page : because the amout of register that you want to use are way less I dispensed the csv file and pre defined all the needed registers namees ,adresses... , that 
+will make the programme faster because he do not need to read the csv file, also as you describe "table of the registers shown and display the initial values
+when the screen first loads" what I did is that when the programme first load read the values of all the registers of the capture device and display theme ,if you meens that, whene when the programme first load
+set! by him self the default value and display them also I will change it 
+
+and i think this is it, for the designe I tried to make it simple , dark theme to make it easy for iyes and make the buttons big so it will be easy to use whith the touch screen, if you want any thing to be changed on it ,I'm here   
+
+
+
+Subject: GUI Development Project Update and Clarifications
+
+Dear [Client's Name],
+
+I hope this message finds you well. I am writing to provide an update on the GUI development project using PyQt and the Modbus RTU protocol for your capture device. I have completed building the GUI based on your description. However, there are a few points that I would like to clarify to ensure that it meets your expectations. If there are any changes that you require, please let me know, and I will be happy to make the necessary modifications.
+
+Regarding the first page, I have implemented the functionality to change the "amount of pour" using pre-defined values for each register. Each time the user presses the button, the value cycles through the list of values: 0, 0.75, 1, 1.5, 2, or 3. When the GUI first loads, it does not change the default value of the POUR_CONTROL register. However, when you press the start button, the POUR_CONTROL register is set to 1, as per your description. Please note that the value can only be changed to 0, 2, or 3 through the settings page.
+
+Moving on to the settings page, I have optimized the code by dispensing the CSV file and pre-defining all the necessary register names, addresses, and other related information directly in the code. This should result in faster performance since the program no longer needs to read the CSV file. As per your description, I have implemented the feature to display the initial values of the registers when the screen first loads. The program reads the values of all the needed registers from the capture device and displays them. If you meant that the program should set the default values by itself when it first loads and display them, please let me know.
+
+In terms of design, I have opted for a simple dark theme to make it easy on the eyes. The buttons are also large, ensuring ease of use with the touch screen.
+
+Please feel free to review the current implementation and share your feedback. If you would like anything changed, don't hesitate to let me know, and I will be happy to make the necessary modifications.
+
+Looking forward to hearing from you.
+
+Best regards,
+[Your Name]
